@@ -10,13 +10,13 @@ pipeline {
                 checkout scm
             }
         }
-        // stage('Terraform Init') {
-        //     steps {
-        //         script {
-        //             sh 'terraform init'
-        //         }
-        //     }
-        // }
+        stage('Terraform Init') {
+            steps {
+                script {
+                    sh 'terraform init'
+                }
+            }
+        }
         // stage('Terraform Validate') {
         //     steps {
         //         script {
