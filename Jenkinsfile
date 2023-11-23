@@ -24,28 +24,28 @@ pipeline {
                 }
             }
         }
-        stage('Terraform Plan') {
-            steps {
-                script {
-                    sh 'terraform plan'
-                }
-            }
-        }
-        stage('Terraform Apply') {
-            steps {
-                script {
-                    sh 'terraform apply -auto-approve'
-                }
-            }
-        }
-
-//         stage('Terraform Destroy') {
+//         stage('Terraform Plan') {
 //             steps {
 //                 script {
-//                     sh 'terraform destroy -auto-approve'
+//                     sh 'terraform plan'
 //                 }
 //             }
 //         }
+//         stage('Terraform Apply') {
+//             steps {
+//                 script {
+//                     sh 'terraform apply -auto-approve'
+//                 }
+//             }
+//         }
+
+        stage('Terraform Destroy') {
+            steps {
+                script {
+                    sh 'terraform destroy -auto-approve'
+                }
+            }
+        }
 
     }
     post {
